@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تهران؛ تپش قلب ایران</title>
+    <style>
+        :root {
+            --tehran-blue: #0d1b2a;
+            --modern-gray: #e0e1dd;
+            --accent-gold: rgba(13, 27, 42, 0.6);
+            --city-silver: #415a77;
+            --soft-white: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--soft-white);
+            margin: 0;
+            line-height: 1.8;
+            color: var(--tehran-blue);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 25px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--tehran-blue);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .back-button:hover {
+            background-color: var(--tehran-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(13, 27, 42, 0.6), rgba(13, 27, 42, 0.6)), 
+                        url('https://media.tehrantimes.com/d/t/2020/12/09/4/3624241.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            max-width: 800px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            background: rgba(184, 146, 106, 0.25);
+            backdrop-filter: blur(5px);
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .container { max-width: 1200px; margin: -50px auto 40px; padding: 0 20px; }
+
+        section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border-bottom: 4px solid var(--accent-gold);
+        }
+
+        h2 {
+            color: var(--tehran-blue);
+            border-right: 5px solid var(--accent-gold);
+            padding-right: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item { 
+            padding: 25px; 
+            background: var(--modern-gray); 
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+        .stat-item:hover { background: #d0d2ca; }
+        .stat-item h4 { margin: 0; color: var(--city-silver); font-size: 1.1rem; }
+        .stat-item p { margin: 8px 0 0; font-weight: 900; color: var(--tehran-blue); font-size: 1.3rem; }
+
+        .flex-content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .flex-text { flex: 2; min-width: 300px; }
+        .flex-img { flex: 1; min-width: 300px; }
+        .flex-img img { 
+            width: 100%; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: 0.4s; 
+        }
+        .flex-img img:hover { transform: scale(1.02); }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 220px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item span {
+            position: absolute; bottom: 0; width: 100%; background: rgba(13, 27, 42, 0.8);
+            color: #fff; padding: 8px; text-align: center; font-size: 0.85rem;
+        }
+
+        footer { 
+            background: var(--tehran-blue); 
+            color: var(--modern-gray); 
+            text-align: center; 
+            padding: 40px; 
+            border-top: 5px solid var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            section { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="../index.html" class="back-button">
+        <span>&#10140;</span> بازگشت به منو
+    </a>
+
+    <header class="hero">
+        <h1>استان تهران</h1>
+        <p>آمیزه‌ای از شکوه تاریخ و شتاب مدرنیته در دامنه‌ی البرز</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>شناسنامه استان</h2>
+            <div class="stats-grid">
+                <div class="stat-item"><h4>مرکز استان</h4><p>کلان‌شهر تهران</p></div>
+                <div class="stat-item"><h4>مساحت</h4><p>کمتر از ۱۳ هزار کیلومتر مربع</p></div>
+                <div class="stat-item"><h4>جمعیت</h4><p>۱۴,۴۳۷,۰۰۰ نفر</p></div>
+                <div class="stat-item"><h4>لقب</h4><p>شهر ۷۲ ملت</p></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex-content">
+                <div class="flex-text">
+                    <h2>پیشینه و اهمیت</h2>
+                    <p>تهران از زمان قاجار تاکنون، قلب سیاسی و اداری ایران بوده است. این استان با تمرکز مراکز علمی، صنعتی و فرهنگی، مهم‌ترین قطب اقتصادی کشور محسوب می‌شود. از محله‌های قدیمی با کوچه‌پس‌کوچه‌های خاطره‌انگیز تا بزرگراه‌های مدرن و آسمان‌خراش‌ها، تهران روایتگر گذار ایران از سنت به مدرنیته است.</p>
+                </div>
+                <div class="flex-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Tehran_fa.svg/960px-Tehran_fa.svg.png" alt="کاخ گلستان">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex-content" style="flex-direction: row-reverse;">
+                <div class="flex-text">
+                    <h2>جغرافیا؛ از دشت تا قله</h2>
+                    <p>قرارگیری در کوهپایه البرز، تنوع اقلیمی بی‌نظیری به این استان بخشیده است. در حالی که جنوب استان به دشت‌های نیمه‌بیابانی می‌رسد، شمال آن با شمیرانات و توچال، فضایی کوهستانی و تفریحی را فراهم آورده که ریه اصلی تنفس این کلان‌شهر شلوغ است.</p>
+                </div>
+                <div class="flex-img">
+                    <img src="https://sepanja.com/blog/wp-content/uploads/2022/07/%D8%B4%D8%A7%D8%AE%D8%B5-6.jpg" alt="دماوند">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>نمادهای شهری و گردشگری</h2>
+            <div class="gallery">
+                <div class="gallery-item"><img src="https://tse4.mm.bing.net/th/id/OIP.Z0hv7Vw6c3s3OkBR2DILsAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="برج آزادی"><span>دروازه تمدن؛ برج آزادی</span></div>
+                <div class="gallery-item"><img src="https://www.jowhareh.com/images/Jowhareh/galleries/poster_6be2459b-4ca7-45c9-b4b6-94687fe388c0.jpeg" alt="برج میلاد"><span>ششمین برج بلند مخابراتی جهان</span></div>
+                <div class="gallery-item"><img src="https://th.bing.com/th/id/R.1b56f90004efe0d104d322a061649a8f?rik=%2f%2fxEgLFq%2fZa3eA&pid=ImgRaw&r=0" alt="پل طبیعت"><span>پل طبیعت؛ شاهکار معماری معاصر</span></div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>استخراج شده از دانشنامه آزاد ویکی‌پدیا | 
+            <a href="https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86_%D8%AA%D9%87%D8%B1%D8%A7%D9%86" 
+               target="_blank" 
+               style="color: #c6a664; text-decoration: none; font-weight: bold; border-bottom: 1px dashed #c6a664;">
+               تهران
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>

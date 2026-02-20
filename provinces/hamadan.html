@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>همدان؛ پایتخت تاریخ و تمدن ایران</title>
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --accent-terracotta: #264c20;
+            --mountain-shadow: rgba(45, 90, 39, 0.85);
+            --soft-stone: #f4f1ea;
+            --dark-brown: #3e2723;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--soft-stone);
+            margin: 0;
+            line-height: 1.8;
+            color: var(--dark-brown);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: var(--primary-green);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent-terracotta);
+        }
+
+        .back-button:hover {
+            background-color: var(--primary-green);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('https://wallpaperaccess.com/full/10971432.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            max-width: 800px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            background: rgba(45, 90, 39, 0.6);
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid var(--accent-terracotta);
+        }
+
+        .container { max-width: 1200px; margin: -50px auto 40px; padding: 0 20px; }
+
+        section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--primary-green);
+            border-right: 5px solid var(--accent-terracotta);
+            padding-right: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item { padding: 20px; background: #f1f5f0; border-radius: 10px; border-bottom: 3px solid var(--primary-green); }
+        .stat-item h4 { margin: 0; color: var(--primary-green); font-size: 1.2rem; }
+        .stat-item p { margin: 5px 0 0; font-weight: bold; }
+
+        .flex-content {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .flex-text { flex: 2; min-width: 300px; }
+        .flex-img { flex: 1; min-width: 300px; }
+        .flex-img img { width: 100%; border-radius: 15px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .flex-img img:hover { transform: translateY(-5px); }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+        
+        .gallery-item:hover { border-color: var(--accent-terracotta); }
+
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-item span {
+            position: absolute; bottom: 0; width: 100%; background: rgba(179, 90, 56, 0.9);
+            color: white; padding: 5px; text-align: center; font-size: 0.8rem;
+        }
+
+        footer { background: var(--primary-green); color: white; text-align: center; padding: 30px; border-top: 5px solid var(--accent-terracotta); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.2rem; }
+            .back-button { top: 10px; right: 10px; padding: 8px 15px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="../index.html" class="back-button">
+       <span>&#10140;</span> بازگشت به صفحه اصلی
+    </a>
+
+    <header class="hero">
+        <h1>استان همدان</h1>
+        <p>پایتخت تاریخ و تمدن ایران و کهن‌ترین شهر جهان</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>در یک نگاه</h2>
+            <div class="stats-grid">
+                <div class="stat-item"><h4>مرکز استان</h4><p>همدان (هگمتانه)</p></div>
+                <div class="stat-item"><h4>مساحت</h4><p>۱۹،۳۶۷ کیلومتر مربع</p></div>
+                <div class="stat-item"><h4>جمعیت</h4><p>بیش از ۱.۷ میلیون نفر</p></div>
+                <div class="stat-item"><h4>لقب</h4><p>پایتخت تاریخ و تمدن ایران</p></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex-content">
+                <div class="flex-text">
+                    <h2>هگمتانه؛ نخستین پایتخت مادها</h2>
+                    <p>همدان یکی از کهن‌ترین شهرهای جهان است که از زمان مادها به عنوان پایتخت (هگمتانه) شناخته می‌شده. این شهر بر دامنه کوه باشکوه الوند بنا شده و در دوران هخامنشیان، اشکانیان و ساسانیان نیز از مراکز مهم سیاسی بوده است. کتیبه‌های گنج‌نامه سندی زنده از شکوه این سرزمین در عصر داریوش و خشایارشا بزرگ است.</p>
+                </div>
+                <div class="flex-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Median_Empire.jpg/330px-Median_Empire.jpg" alt="تپه هگمتانه">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex-content" style="flex-direction: row-reverse;">
+                <div class="flex-text">
+                    <h2>طبیعت الوند و غار علیصدر</h2>
+                    <p>استان همدان به دلیل واقع شدن در کوهستان‌های غرب ایران، دارای تابستان‌های خنک و زمستان‌های پربرف است. غار علیصدر، به عنوان بزرگترین غار آبی قابل قایقرانی جهان، یکی از شگفت‌انگیزترین جاذبه‌های طبیعی این استان است که سالانه هزاران گردشگر را به خود جذب می‌کند. دشت‌های سرسبز عباس‌آباد نیز نگینی بر تارک طبیعت این دیار است.</p>
+                </div>
+                <div class="flex-img">
+                    <img src="https://setare.com/files/1397/02/16/%D8%BA%D8%A7%D8%B1-%D8%B9%D9%84%DB%8C%D8%B5%D8%AF%D8%B1-788x506.jpg" alt="غار علیصدر">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>صنایع دستی، لالجین و مشاهیر</h2>
+            <p>همدان مهد علم و هنر است. لالجین به عنوان "شهر جهانی سفال" شناخته می‌شود و صنایع دستی آن به سراسر دنیا صادر می‌گردد. همچنین این استان آرامگاه بزرگانی چون بوعلی سینا (شیخ‌الرئیس) و باباطاهر عریان است که نمادهای فرهنگی این شهر محسوب می‌شوند.</p>
+            <div class="gallery">
+                <div class="gallery-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/1%D8%A2%D8%B1%D8%A7%D9%85%DA%AF%D8%A7%D9%87_%D8%A8%D8%A7%D8%A8%D8%A7_%D8%B7%D8%A7%D9%87%D8%B1_%D8%B9%D8%B1%DB%8C%D8%A7%D9%86.jpg/250px-1%D8%A2%D8%B1%D8%A7%D9%85%DA%AF%D8%A7%D9%87_%D8%A8%D8%A7%D8%A8%D8%A7_%D8%B7%D8%A7%D9%87%D8%B1_%D8%B9%D8%B1%DB%8C%D8%A7%D9%86.jpg" alt="آرامگاه باباطاهر"><span>آرامگاه باباطاهر</span></div>
+                <div class="gallery-item"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Ganj_Nameh-Hamedan.jpg/1280px-Ganj_Nameh-Hamedan.jpg" alt="گنجنامه"><span>کتیبه‌های گنجنامه</span></div>
+                <div class="gallery-item"><img src="https://mojasamesazi.com/wp-content/uploads/2017/09/lalejin_potter.jpg" alt="سفال لالجین"><span>سفالگری لالجین</span></div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>استخراج شده از دانشنامه آزاد ویکی‌پدیا | 
+            <a href="https://fa.wikipedia.org/wiki/%D9%87%D9%85%D8%AF%D8%A7%D9%86" 
+               target="_blank" 
+               style="color: #ffffff; text-decoration: underline; font-weight: bold;">
+                 همدان
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>

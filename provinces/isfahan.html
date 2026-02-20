@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اصفهان؛ نصف جهان و نگین کویر</title>
+    <style>
+        :root {
+            --primary-blue: #005691;
+            --accent-gold: rgba(0, 86, 145, 0.8);
+            --turquoise: rgba(1, 68, 113, 0.875);
+            --soft-cream: #fdfaf5;
+            --dark-gray: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--soft-cream);
+            margin: 0;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .back-button:hover {
+            background-color: var(--primary-blue);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Naghshejahan.jpg/1280px-Naghshejahan.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            max-width: 800px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 86, 145, 0.4);
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 1px solid var(--turquoise);
+        }
+
+        .container { max-width: 1200px; margin: -50px auto 40px; padding: 0 20px; }
+
+        section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            border-right: 5px solid var(--accent-gold);
+            padding-right: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item { padding: 20px; background: #eef6fb; border-radius: 10px; border-bottom: 3px solid var(--turquoise); }
+        .stat-item h4 { margin: 0; color: var(--primary-blue); font-size: 1.2rem; }
+        .stat-item p { margin: 5px 0 0; font-weight: bold; }
+
+        .flex-content {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .flex-text { flex: 2; min-width: 300px; }
+        .flex-img { flex: 1; min-width: 300px; }
+        .flex-img img { width: 100%; border-radius: 15px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .flex-img img:hover { transform: translateY(-5px); }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+        
+        .gallery-item:hover { border-color: var(--turquoise); }
+
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-item span {
+            position: absolute; bottom: 0; width: 100%; background: rgba(0, 86, 145, 0.8);
+            color: white; padding: 5px; text-align: center; font-size: 0.8rem;
+        }
+
+        footer { background: var(--primary-blue); color: white; text-align: center; padding: 30px; border-top: 5px solid var(--accent-gold); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.2rem; }
+            .back-button { top: 10px; right: 10px; padding: 8px 15px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="../index.html" class="back-button">
+       <span>&#10140;</span> بازگشت به صفحه اصلی
+    </a>
+
+    <header class="hero">
+        <h1>استان اصفهان</h1>
+        <p>پایتخت فرهنگ و تمدن ایران اسلامی و موزه‌ای به وسعت یک شهر</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>در یک نگاه</h2>
+            <div class="stats-grid">
+                <div class="stat-item"><h4>مرکز استان</h4><p>اصفهان (نصف جهان)</p></div>
+                <div class="stat-item"><h4>مساحت</h4><p>۱۰۷،۰۱۸ کیلومتر مربع</p></div>
+                <div class="stat-item"><h4>جمعیت</h4><p>بیش از ۵.۱ میلیون نفر</p></div>
+                <div class="stat-item"><h4>لقب</h4><p>پایتخت فرهنگ و تمدن ایران</p></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex-content">
+                <div class="flex-text">
+                    <h2>تاریخ و شکوه پایتخت صفوی</h2>
+                    <p>اصفهان با پیشینه‌ای باستانی، در دوران صفویه به اوج شکوه خود رسید و پایتخت ایران شد. نام این شهر در منابع تاریخی "سپاهان" ذکر شده که محل گردآمدن سپاهیان بوده است. میدان نقش جهان، به عنوان یکی از بزرگترین میدان‌های جهان، گواهی بر نبوغ معماری و هنری مردمان این دیار است. این شهر در طول تاریخ کانون همزیستی ادیان و فرهنگ‌های مختلف بوده است.</p>
+                </div>
+                <div class="flex-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Isfahan_fa.svg/1280px-Isfahan_fa.svg.png" alt="میدان نقش جهان">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex-content" style="flex-direction: row-reverse;">
+                <div class="flex-text">
+                    <h2>جغرافیا و زاینده‌رود</h2>
+                    <p>استان اصفهان در مرکز فلات ایران قرار دارد و تنوع اقلیمی آن از کویرهای پهناور تا کوهستان‌های زاگرس را شامل می‌شود. شریان حیاتی این استان، "زاینده‌رود" است که از زردکوه سرچشمه گرفته و پس از عبور از دل شهر اصفهان و سیراب کردن مزارع، به تالاب گاوخونی می‌ریزد. پل‌های تاریخی روی این رودخانه، از زیباترین نمادهای مهندسی سنتی ایران هستند.</p>
+                </div>
+                <div class="flex-img">
+                    <img src="https://static2.borna.news/thumbnail/Jpd9lkrUSail/zKlnR2CgDMsLPypExSqkWVexFSgSRltNvp3exfX06vug6WJOtspsxLwVvO9faXc9wvplisndFdUHpxCkrVbVYc8LyOv16EWB/8871588_433.jpg" alt="پل خواجو">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>هنر، صنایع دستی و سوغات</h2>
+            <p>اصفهان قطب صنایع دستی جهان است. از میناکاری و خاتم‌کاری گرفته تا قلم‌زنی و فیروزه‌کوبی، هنر در رگ‌های این شهر جاری است. گز اصفهان و پولکی نیز از مشهورترین سوغات‌های خوراکی این استان هستند که شهرت جهانی دارند.</p>
+            <div class="gallery">
+                <div class="gallery-item"><img src="https://honarlux.ir/wp-content/uploads/2019/02/%D8%A8%D8%B4%D9%82%D8%A7%D8%A8-%D9%85%DB%8C%D9%86%D8%A7%DA%A9%D8%A7%D8%B1%DB%8C-30%D8%B3%D8%A7%D9%86%D8%AA%DB%8C.jpg" alt="کلیسای وانک"><span>کلیسای وانک جلفا</span></div>
+                <div class="gallery-item"><img src="https://bazaremina.ir/wp-content/uploads/2020/08/ghandan-ghalamzani-logo-d17-430x323.jpg" alt="سی و سه پل"><span>سی و سه پل</span></div>
+                <div class="gallery-item"><img src="https://th.bing.com/th/id/R.4f6a4c897e3f29bc737930e684a61e9a?rik=W6HpcGCv3BkvaA&pid=ImgRaw&r=0" alt="عالی قاپو"><span>کاخ عالی قاپو</span></div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>استخراج شده از دانشنامه آزاد ویکی‌پدیا | 
+            <a href="https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86_%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86" 
+               target="_blank" 
+               style="color: var(--turquoise); text-decoration: none; font-weight: bold; border-bottom: 1px dashed var(--turquoise);">
+                اصفهان
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>
