@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>فارس؛ گهواره تمدن و پایتخت فرهنگی ایران</title>
+    <link rel="preload" as="image" href="https://cdn.nody.ir/files/2023/01/31/nody-%DA%86%D9%86%D8%AF-%D8%B9%DA%A9%D8%B3-%D8%A7%D8%B2-%D8%AA%D8%AE%D8%AA-%D8%AC%D9%85%D8%B4%DB%8C%D8%AF-1675173311.jpg" type="image/jpeg">
     <style>
         :root {
-            --primary-fars: #6a0e1a; /* سرخ یاقوتی - نماد انگور و انار فارس */
-            --accent-green: #2d6a4f;  /* سبز سرو شیراز */
-            --light-cream: #f8f9fa;    /* رنگ سنگ‌های تخت جمشید */
-            --dark-text: #2b2d42;     
-            --gold-empire: #d4af37;   /* طلایی هخامنشی */
+            --primary-fars: #6a0e1a;
+            --accent-green: #2d6a4f;
+            --light-cream: #f8f9fa;
+            --dark-text: #2b2d42;
+            --gold-empire: #d4af37;
+            --text-light: #ffffff;
         }
 
         body {
@@ -19,146 +21,233 @@
             margin: 0;
             line-height: 1.8;
             color: var(--dark-text);
+            font-size: 1.1rem;
         }
 
-        /* --- استایل دکمه بازگشت --- */
         .back-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            position: fixed;
+            top: 16px;
+            right: 16px;
             z-index: 1000;
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 20px;
-            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 18px;
+            background-color: rgba(255, 255, 255, 0.95);
             color: var(--primary-fars);
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 50px;
             font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             border: 1px solid var(--gold-empire);
         }
 
-        .back-button:hover {
-            background-color: var(--primary-fars);
-            color: white;
-            transform: scale(1.05);
-        }
+        .back-button:hover { background: var(--primary-fars); color: white; transform: scale(1.05); }
 
-        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                        url('https://cdn.nody.ir/files/2023/01/31/nody-%DA%86%D9%86%D8%AF-%D8%B9%DA%A9%D8%B3-%D8%A7%D8%B2-%D8%AA%D8%AE%D8%AA-%D8%AC%D9%85%D8%B4%DB%8C%D8%AF-1675173311.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 70vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75) 70%), 
+                        url('https://cdn.nody.ir/files/2023/01/31/nody-%DA%86%D9%86%D8%AF-%D8%B9%DA%A9%D8%B3-%D8%A7%D8%B2-%D8%AA%D8%AE%D8%AA-%D8%AC%D9%85%D8%B4%DB%8C%D8%AF-1675173311.jpg') center/cover no-repeat;
+            background-attachment: scroll;
+            height: 80vh;
+            min-height: 500px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: var(--text-light);
             text-align: center;
             padding: 0 20px;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            font-size: 4.2rem;
+            margin: 0 0 20px;
+            text-shadow: 3px 3px 20px rgba(0,0,0,0.8);
+            font-weight: 900;
         }
 
         .hero p {
-            font-size: 1.6rem;
-            max-width: 800px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            background: rgba(106, 14, 26, 0.6);
-            padding: 10px 25px;
-            border-radius: 50px;
+            font-size: 1.7rem;
+            max-width: 900px;
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.9);
+            background: rgba(106, 14, 26, 0.65);
+            padding: 12px 30px;
+            border-radius: 60px;
+            border: 1px solid rgba(212,175,55,0.4);
         }
 
-        .container { max-width: 1200px; margin: -50px auto 40px; padding: 0 20px; }
+        .container { max-width: 1200px; margin: -80px auto 60px; padding: 0 20px; }
 
         section {
             background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
+            padding: 45px 30px;
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h2 {
             color: var(--primary-fars);
-            border-right: 5px solid var(--gold-empire);
-            padding-right: 15px;
-            margin-bottom: 25px;
+            border-right: 6px solid var(--gold-empire);
+            padding-right: 18px;
+            margin-bottom: 30px;
+            font-size: 2.1rem;
         }
 
-        /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
             text-align: center;
         }
 
-        .stat-item { padding: 20px; background: #fff3f3; border-radius: 10px; border-bottom: 3px solid var(--gold-empire); }
-        .stat-item h4 { margin: 0; color: var(--primary-fars); font-size: 1.2rem; }
-        .stat-item p { margin: 5px 0 0; font-weight: bold; }
+        .stat-item {
+            padding: 20px 12px;
+            background: rgba(255, 243, 243, 0.92);
+            border-radius: 12px;
+            border: 1px solid rgba(106,14,26,0.12);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
 
-        /* Content Layout */
+        .stat-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(106,14,26,0.15);
+        }
+
+        .stat-item h4 {
+            margin: 0 0 8px;
+            color: var(--primary-fars);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .stat-item p {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin: 1.5rem 0.8rem 0.5rem 0;
+            padding: 12px 28px;
+            background: var(--primary-fars);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover { background: #85121f; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(106,14,26,0.3); }
+
         .flex-content {
             display: flex;
-            gap: 30px;
+            gap: 35px;
             flex-wrap: wrap;
             align-items: center;
         }
 
-        .flex-text { flex: 2; min-width: 300px; }
-        .flex-img { flex: 1; min-width: 300px; }
-        .flex-img img { width: 100%; border-radius: 15px; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); }
+        .flex-text { flex: 2; min-width: 320px; }
+        .flex-img { flex: 1; min-width: 320px; }
+        .flex-img img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease;
+        }
+        .flex-img img:hover { transform: scale(1.04); }
 
-        /* Gallery */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
         }
 
         .gallery-item {
             position: relative;
-            height: 200px;
-            border-radius: 10px;
+            height: 220px;
+            border-radius: 12px;
             overflow: hidden;
+            transition: all 0.4s;
         }
 
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item:hover { transform: scale(1.04); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
         .gallery-item span {
-            position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7);
-            color: white; padding: 5px; text-align: center; font-size: 0.8rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(106, 14, 26, 0.85);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
-        footer { background: var(--primary-fars); color: white; text-align: center; padding: 30px; }
+        footer {
+            background: var(--primary-fars);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 6px solid var(--gold-empire);
+        }
 
-        @media (max-width: 768px) {
+        /* موبایل */
+        @media (max-width: 900px) {
+            .hero { height: 70vh; min-height: 450px; }
+            .hero h1 { font-size: 3.2rem; }
+            .hero p  { font-size: 1.4rem; padding: 10px 24px; }
+        }
+
+        @media (max-width: 600px) {
+            .hero { height: 60vh; min-height: 380px; }
             .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.1rem; }
+            .hero p  { font-size: 1.25rem; }
+            .back-button { top: 12px; right: 12px; padding: 8px 14px; font-size: 0.9rem; }
+            section { padding: 35px 20px; }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .stat-item {
+                padding: 16px 10px;
+            }
+            .stat-item h4 { font-size: 0.95rem; }
+            .stat-item p  { font-size: 1.25rem; }
+        }
+
+        @media (max-width: 380px) {
+            .stats-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <a href="../index.html" class="back-button">
-       <span>&#10140;</span> بازگشت به صفحه اصلی
+    <a href="../index.html" class="back-button" aria-label="بازگشت به صفحه اصلی سایت">
+        <span aria-hidden="true">←</span> بازگشت
     </a>
 
     <header class="hero">
         <h1>استان فارس</h1>
-        <p>مرکز امپراتوری‌های کهن و پایتخت ادبی ایران زمین</p>
+        <p>گهواره تمدن ایران – پایتخت فرهنگی و ادبی ایران‌زمین</p>
     </header>
 
     <div class="container">
@@ -167,19 +256,21 @@
             <div class="stats-grid">
                 <div class="stat-item"><h4>مرکز استان</h4><p>شیراز (شهر راز)</p></div>
                 <div class="stat-item"><h4>مساحت</h4><p>۱۲۲٬۶۰۸ کیلومتر مربع</p></div>
-                <div class="stat-item"><h4>جمعیت</h4><p>بیش از ۵٬۰۰۰٬۰۰۰ نفر</p></div>
-                <div class="stat-item"><h4>لقب</h4><p>گهواره تمدن ایران</p></div>
+                <div class="stat-item"><h4>جمعیت</h4><p>≈ ۵٫۱–۵٫۱۸ میلیون نفر</p></div>
+                <div class="stat-item"><h4>لقب معروف</h4><p>گهواره تمدن و پایتخت فرهنگی ایران</p></div>
             </div>
         </section>
 
         <section>
             <div class="flex-content">
                 <div class="flex-text">
-                    <h2>خاستگاه ایران</h2>
-                    <p>نام استان فارس در متون پهلوی به صورت «پارس» آمده است. این سرزمین خاستگاه دو سلسله بزرگ تاریخ ایران، هخامنشیان و ساسانیان بوده و نام کشور ایران در بسیاری از زبان‌های جهان (Persia) از نام این منطقه گرفته شده است. فارس با داشتن بیشترین آثار باستانی ثبت شده در فهرست جهانی یونسکو، شناسنامه تمدنی ایران محسوب می‌شود.</p>
+                    <h2>خاستگاه ایران؛ پارس باستان</h2>
+                    <p>نام «فارس» از «پارس» در متون باستانی گرفته شده و این سرزمین خاستگاه دو امپراتوری بزرگ هخامنشی و ساسانی است. نام «پرشیا» (Persia) در بسیاری از زبان‌ها از همین منطقه گرفته شده. فارس با بیشترین آثار ثبت‌شده در یونسکو، شناسنامه تمدنی ایران به شمار می‌رود.</p>
                 </div>
                 <div class="flex-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Gate_of_All_Nations%2C_Persepolis.jpg/918px-Gate_of_All_Nations%2C_Persepolis.jpg" alt="تخت جمشید">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Gate_of_All_Nations%2C_Persepolis.jpg/918px-Gate_of_All_Nations%2C_Persepolis.jpg" 
+                         alt="دروازه ملل در تخت جمشید – نماد امپراتوری هخامنشی در استان فارس" loading="lazy">
+                    <a href="https://www.google.com/maps/place/شیراز" target="_blank" class="cta-button">نمایش شیراز روی نقشه</a>
                 </div>
             </div>
         </section>
@@ -187,11 +278,12 @@
         <section>
             <div class="flex-content" style="flex-direction: row-reverse;">
                 <div class="flex-text">
-                    <h2>پایتخت فرهنگی</h2>
-                    <p>شیراز، مرکز استان فارس، به واسطه حضور آرامگاه شاعران بزرگی چون حافظ و سعدی، قطب فرهنگی و ادبی ایران است. باغ‌های باشکوه ایرانی مانند باغ ارم و باغ نارنجستان قوام، در کنار معماری بی‌نظیر مسجد نصیرالملک (مسجد صورتی)، تلفیقی از هنر، عرفان و طبیعت را در این استان به نمایش می‌گذارند.</p>
+                    <h2>پایتخت فرهنگی و ادبی</h2>
+                    <p>شیراز به دلیل آرامگاه <strong>حافظ</strong> و <strong>سعدی</strong>، قطب شعر و ادب پارسی است. باغ‌های ایرانی مانند <strong>باغ ارم</strong> و <strong>نارنجستان قوام</strong>، همراه با معماری خیره‌کننده <strong>مسجد نصیرالملک</strong> (معروف به مسجد صورتی)، هنر، عرفان و طبیعت را در هم آمیخته‌اند.</p>
                 </div>
                 <div class="flex-img">
-                    <img src="https://tse1.mm.bing.net/th/id/OIP.e1RaCkGnm0fugG3o-JvxFgHaE8?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="مسجد نصیرالملک">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.e1RaCkGnm0fugG3o-JvxFgHaE8?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                         alt="نورهای رنگارنگ و شیشه‌های رنگی داخل مسجد نصیرالملک (مسجد صورتی) شیراز" loading="lazy">
                 </div>
             </div>
         </section>
@@ -199,23 +291,51 @@
         <section>
             <h2>جاذبه‌ها و صنایع دستی</h2>
             <p>از فالوده شیرازی و کلم‌پلو تا قالی قشقایی و خاتم‌کاری‌های ظریف؛ فارس دنیایی از رنگ و طعم است.</p>
+
+            <div style="margin: 2rem 0;">
+                <a href="https://fa.wikipedia.org/wiki/تخت_جمشید" target="_blank" class="cta-button">بیشتر درباره تخت جمشید</a>
+            </div>
+
             <div class="gallery">
-                <div class="gallery-item"><img src="https://tse2.mm.bing.net/th/id/OIP.q1Nfcl_jVzk8k0TISDKprQHaEU?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="حافظیه"><span>آرامگاه حافظ (حافظیه)</span></div>
-                <div class="gallery-item"><img src="https://tse4.mm.bing.net/th/id/OIP.3FGr37lqKw8Apg015t305gHaDt?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="پاسارگاد"><span>آرامگاه کوروش بزرگ</span></div>
-                <div class="gallery-item"><img src="https://tse3.mm.bing.net/th/id/OIP.yFJH5rdQ7ihmRHkqqTI7XwHaE8?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="باغ ارم"><span>باغ ارم شیراز</span></div>
+                <div class="gallery-item">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.q1Nfcl_jVzk8k0TISDKprQHaEU?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                         alt="آرامگاه حافظ (حافظیه) در شیراز – نماد شعر و ادب پارسی" loading="lazy">
+                    <span>حافظیه</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.3FGr37lqKw8Apg015t305gHaDt?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                         alt="آرامگاه کوروش بزرگ در پاسارگاد – میراث جهانی یونسکو در استان فارس" loading="lazy">
+                    <span>پاسارگاد</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.yFJH5rdQ7ihmRHkqqTI7XwHaE8?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                         alt="باغ ارم شیراز – یکی از زیباترین باغ‌های تاریخی ایران" loading="lazy">
+                    <span>باغ ارم</span>
+                </div>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>استخراج شده از دانشنامه آزاد ویکی‌پدیا | 
-            <a href="https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86_%D9%81%D8%A7%D8%B1%D8%B3" 
-               target="_blank" 
-               style="color: var(--gold-empire); text-decoration: none; font-weight: bold; border-bottom: 1px dashed var(--gold-empire);">
-               استان فارس
+        <p>اطلاعات برگرفته از منابع معتبر از جمله ویکی‌پدیا | 
+            <a href="https://fa.wikipedia.org/wiki/استان_فارس" target="_blank" style="color:#ffd700; font-weight:bold; text-decoration:underline;">
+                استان فارس
             </a>
         </p>
     </footer>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
 
 </body>
 </html>

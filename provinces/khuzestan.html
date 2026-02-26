@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اصفهان؛ نصف جهان و نگین کویر</title>
-    <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Naghshejahan.jpg/1280px-Naghshejahan.jpg" type="image/jpeg">
+    <title>خوزستان؛ مهد تمدن ایلام و رود کارون</title>
+    <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Karun_River_Ahvaz.jpg/1280px-Karun_River_Ahvaz.jpg" type="image/jpeg">
     <style>
         :root {
-            --primary-blue: #005691;
-            --accent-gold: rgba(0, 86, 145, 0.8);
-            --turquoise: rgba(1, 68, 113, 0.875);
-            --soft-cream: #fdfaf5;
-            --dark-gray: #2c3e50;
+            --primary-gold: #d4a017;
+            --accent-blue: #0d47a1;
+            --soft-beige: #fdf2e9;
+            --dark-green: #2e4a2e;
+            --dark-brown: #3e2723;
             --text-light: #ffffff;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--soft-cream);
+            background-color: var(--soft-beige);
             margin: 0;
             line-height: 1.8;
-            color: var(--dark-gray);
+            color: var(--dark-brown);
             font-size: 1.1rem;
         }
 
@@ -34,21 +34,25 @@
             gap: 8px;
             padding: 10px 18px;
             background-color: rgba(255, 255, 255, 0.95);
-            color: var(--primary-blue);
+            color: var(--accent-blue);
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             font-size: 0.95rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
-            border: 1px solid var(--accent-gold);
+            border: 1px solid var(--primary-gold);
         }
 
-        .back-button:hover { background: var(--primary-blue); color: white; transform: scale(1.05); }
+        .back-button:hover { 
+            background: var(--primary-gold); 
+            color: white; 
+            transform: scale(1.05); 
+        }
 
         .hero {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75) 70%), 
-                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Naghshejahan.jpg/1280px-Naghshejahan.jpg') center/cover no-repeat;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.70) 70%), 
+                        url('pic/khuz8.jpg') center/cover no-repeat;
             background-attachment: scroll;
             height: 80vh;
             min-height: 500px;
@@ -62,20 +66,20 @@
         }
 
         .hero h1 {
-            font-size: 4.2rem;
+            font-size: 4.5rem;
             margin: 0 0 20px;
             text-shadow: 3px 3px 20px rgba(0,0,0,0.8);
             font-weight: 900;
         }
 
         .hero p {
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             max-width: 900px;
             text-shadow: 2px 2px 12px rgba(0,0,0,0.9);
-            background: rgba(0, 86, 145, 0.65);
+            background: rgba(13, 71, 161, 0.65);
             padding: 12px 30px;
             border-radius: 60px;
-            border: 1px solid var(--turquoise);
+            border: 1px solid rgba(212,160,23,0.5);
         }
 
         .container { max-width: 1200px; margin: -80px auto 60px; padding: 0 20px; }
@@ -97,11 +101,11 @@
         }
 
         h2 {
-            color: var(--primary-blue);
-            border-right: 6px solid var(--accent-gold);
+            color: var(--accent-blue);
+            border-right: 6px solid var(--primary-gold);
             padding-right: 18px;
             margin-bottom: 30px;
-            font-size: 2.1rem;
+            font-size: 2.2rem;
         }
 
         .stats-grid {
@@ -113,21 +117,21 @@
 
         .stat-item {
             padding: 20px 12px;
-            background: rgba(238, 246, 251, 0.92);
+            background: rgba(255, 255, 255, 0.92);
             border-radius: 12px;
-            border: 1px solid rgba(0,86,145,0.12);
+            border: 1px solid rgba(212,160,23,0.2);
             box-shadow: 0 3px 10px rgba(0,0,0,0.06);
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .stat-item:hover {
             transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(0,86,145,0.15);
+            box-shadow: 0 8px 20px rgba(212,160,23,0.2);
         }
 
         .stat-item h4 {
             margin: 0 0 8px;
-            color: var(--primary-blue);
+            color: var(--accent-blue);
             font-size: 1.05rem;
             font-weight: 600;
         }
@@ -136,14 +140,14 @@
             margin: 0;
             font-size: 1.3rem;
             font-weight: 700;
-            color: var(--dark-gray);
+            color: var(--dark-brown);
         }
 
         .cta-button {
             display: inline-block;
             margin: 1.5rem 0.8rem 0.5rem 0;
             padding: 12px 28px;
-            background: var(--primary-blue);
+            background: var(--primary-gold);
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -151,7 +155,11 @@
             transition: all 0.3s;
         }
 
-        .cta-button:hover { background: #006bb3; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,86,145,0.3); }
+        .cta-button:hover { 
+            background: #b8860b; 
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 20px rgba(212,160,23,0.3); 
+        }
 
         .flex-content {
             display: flex;
@@ -193,7 +201,7 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            background: rgba(0, 86, 145, 0.85);
+            background: rgba(212, 160, 23, 0.85);
             color: white;
             padding: 10px;
             text-align: center;
@@ -202,24 +210,24 @@
         }
 
         footer {
-            background: var(--primary-blue);
+            background: var(--accent-blue);
             color: white;
             text-align: center;
             padding: 40px 20px;
-            border-top: 6px solid var(--accent-gold);
+            border-top: 6px solid var(--primary-gold);
         }
 
         /* موبایل */
         @media (max-width: 900px) {
             .hero { height: 70vh; min-height: 450px; }
-            .hero h1 { font-size: 3.2rem; }
-            .hero p  { font-size: 1.4rem; padding: 10px 24px; }
+            .hero h1 { font-size: 3.5rem; }
+            .hero p  { font-size: 1.5rem; padding: 10px 24px; }
         }
 
         @media (max-width: 600px) {
             .hero { height: 60vh; min-height: 380px; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p  { font-size: 1.25rem; }
+            .hero h1 { font-size: 2.8rem; }
+            .hero p  { font-size: 1.3rem; }
             .back-button { top: 12px; right: 12px; padding: 8px 14px; font-size: 0.9rem; }
             section { padding: 35px 20px; }
 
@@ -242,35 +250,35 @@
 <body>
 
     <a href="../index.html" class="back-button" aria-label="بازگشت به صفحه اصلی سایت">
-        <span aria-hidden="true">←</span> بازگشت
+        <span aria-hidden="true">←</span> بازگشت به صفحه اصلی
     </a>
 
     <header class="hero">
-        <h1>استان اصفهان</h1>
-        <p>پایتخت فرهنگ و تمدن ایران اسلامی – نصف جهان</p>
+        <h1>استان خوزستان</h1>
+        <p>مهد تمدن ایلام، رود کارون، نخلستان‌های بی‌پایان و تاریخ نفت ایران</p>
     </header>
 
     <div class="container">
         <section>
             <h2>در یک نگاه</h2>
             <div class="stats-grid">
-                <div class="stat-item"><h4>مرکز استان</h4><p>اصفهان (نصف جهان)</p></div>
-                <div class="stat-item"><h4>مساحت</h4><p>۱۰۷٬۰۱۸ کیلومتر مربع</p></div>
-                <div class="stat-item"><h4>جمعیت</h4><p>≈ ۵٫۴۲ میلیون نفر</p></div>
-                <div class="stat-item"><h4>لقب معروف</h4><p>پایتخت فرهنگ و تمدن ایران</p></div>
+                <div class="stat-item"><h4>مرکز استان</h4><p>اهواز</p></div>
+                <div class="stat-item"><h4>مساحت</h4><p>۶۴٬۰۵۷ کیلومتر مربع</p></div>
+                <div class="stat-item"><h4>جمعیت</h4><p>≈ ۴٫۷–۵ میلیون نفر</p></div>
+                <div class="stat-item"><h4>لقب</h4><p>سرزمین کارون و نخل</p></div>
             </div>
         </section>
 
         <section>
             <div class="flex-content">
                 <div class="flex-text">
-                    <h2>تاریخ و شکوه پایتخت صفوی</h2>
-                    <p>اصفهان با پیشینه‌ای باستانی، در دوران صفویه به اوج شکوه رسید و پایتخت ایران شد. نام تاریخی آن "سپاهان" (محل گردآمدن سپاهیان) است. میدان نقش جهان، یکی از بزرگ‌ترین میدان‌های جهان، گواهی بر نبوغ معماری و هنری این شهر است. اصفهان در طول تاریخ کانون همزیستی ادیان و فرهنگ‌های مختلف بوده است.</p>
+                    <h2>تمدن ایلام و تاریخ کهن</h2>
+                    <p>خوزستان یکی از قدیمی‌ترین مناطق مسکونی جهان است. تمدن ایلام (حدود ۲۷۰۰ ق.م) در این سرزمین شکوفا شد. زیگورات چغازنبیل (میراث جهانی یونسکو)، هفت‌تپه، شوش و آثار باستانی متعدد نشان از قدمت چند هزار ساله این خطه دارد. خوزستان همواره محل تلاقی فرهنگ‌های ایلامی، پارسی، عربی و لر بوده است.</p>
                 </div>
                 <div class="flex-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Isfahan_fa.svg/1280px-Isfahan_fa.svg.png" 
-                         alt="نقشه استان اصفهان – نشان‌دهنده موقعیت مرکزی و اهمیت جغرافیایی" loading="lazy">
-                    <a href="https://www.google.com/maps/place/اصفهان" target="_blank" class="cta-button">نمایش اصفهان روی نقشه</a>
+                    <img src="pic/khuz2.png" 
+                         alt="زیگورات چغازنبیل – معبد باستانی ایلامی و میراث جهانی یونسکو" loading="lazy">
+                    <a href="https://www.google.com/maps/place/اهواز" target="_blank" class="cta-button">نمایش اهواز روی نقشه</a>
                 </div>
             </div>
         </section>
@@ -278,48 +286,48 @@
         <section>
             <div class="flex-content" style="flex-direction: row-reverse;">
                 <div class="flex-text">
-                    <h2>جغرافیا و زاینده‌رود</h2>
-                    <p>اصفهان در مرکز فلات ایران قرار دارد و تنوع اقلیمی از کویر تا کوهستان زاگرس را شامل می‌شود. زاینده‌رود، شریان حیاتی استان، از زردکوه سرچشمه گرفته و پس از عبور از شهر اصفهان به تالاب گاوخونی می‌ریزد. پل‌های تاریخی روی این رود، از زیباترین شاهکارهای مهندسی سنتی ایران هستند.</p>
+                    <h2>رود کارون و طبیعت جنوب</h2>
+                    <p>کارون بزرگ‌ترین و پرآب‌ترین رود ایران است و زندگی مردم خوزستان را شکل داده. نخلستان‌های وسیع، تالاب شادگان (بزرگ‌ترین تالاب ایران)، آبشار شوی، دریاچه شهیون و سازه‌های آبی شوشتر (میراث جهانی) از جاذبه‌های طبیعی بی‌نظیر این استان هستند.</p>
                 </div>
                 <div class="flex-img">
-                    <img src="https://static2.borna.news/thumbnail/Jpd9lkrUSail/zKlnR2CgDMsLPypExSqkWVexFSgSRltNvp3exfX06vug6WJOtspsxLwVvO9faXc9wvplisndFdUHpxCkrVbVYc8LyOv16EWB/8871588_433.jpg" 
-                         alt="پل خواجو روی زاینده‌رود اصفهان – نماد معماری و مهندسی صفوی" loading="lazy">
+                    <img src="pic/khuz3.jpg" 
+                         alt="سازه‌های آبی شوشتر – شاهکار مهندسی باستانی و میراث جهانی" loading="lazy">
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>هنر، صنایع دستی و سوغات</h2>
-            <p>اصفهان قطب صنایع دستی جهان است؛ از میناکاری، خاتم‌کاری، قلم‌زنی و فیروزه‌کوبی تا گز و پولکی که شهرت جهانی دارند. این شهر موزه‌ای زنده از هنر و فرهنگ ایرانی است.</p>
+            <h2>جاذبه‌های تاریخی و طبیعی</h2>
+            <p>از پل‌های معلق اهواز روی کارون، آرامگاه دانیال نبی در شوش، قلعه سلاسل شوشتر، تالاب شادگان، نرگس‌زارهای بهبهان تا مناطق نفت‌خیز و فرهنگ غنی عشایر عرب و بختیاری؛ خوزستان ترکیبی بی‌نظیر از تاریخ، طبیعت و تمدن است.</p>
 
             <div style="margin: 2rem 0;">
-                <a href="https://fa.wikipedia.org/wiki/میدان_نقش_جهان" target="_blank" class="cta-button">بیشتر درباره میدان نقش جهان</a>
+                <a href="https://fa.wikipedia.org/wiki/استان_خوزستان" target="_blank" class="cta-button">بیشتر درباره استان خوزستان</a>
             </div>
 
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="https://honarlux.ir/wp-content/uploads/2019/02/%D8%A8%D8%B4%D9%82%D8%A7%D8%A8-%D9%85%DB%8C%D9%86%D8%A7%DA%A9%D8%A7%D8%B1%DB%8C-30%D8%B3%D8%A7%D9%86%D8%AA%DB%8C.jpg" 
-                         alt="نمونه هنر میناکاری اصفهان – صنایع دستی برجسته استان" loading="lazy">
-                    <span>میناکاری اصفهان</span>
+                    <img src="pic/khuz5.avif" 
+                         alt="تالاب شادگان – بزرگ‌ترین تالاب ایران و پناهگاه پرندگان مهاجر" loading="lazy">
+                    <span>تالاب شادگان</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://bazaremina.ir/wp-content/uploads/2020/08/ghandan-ghalamzani-logo-d17-430x323.jpg" 
-                         alt="نمونه هنر قلم‌زنی روی فلز – یکی از صنایع دستی معروف اصفهان" loading="lazy">
-                    <span>قلم‌زنی اصفهان</span>
+                    <img src="pic/khuz6.jpg" 
+                         alt="پل سفید اهواز – نماد شهر اهواز روی رود کارون" loading="lazy">
+                    <span>پل سفید اهواز</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://th.bing.com/th/id/R.4f6a4c897e3f29bc737930e684a61e9a?rik=W6HpcGCv3BkvaA&pid=ImgRaw&r=0" 
-                         alt="کاخ عالی قاپو در میدان نقش جهان اصفهان – شاهکار معماری صفوی" loading="lazy">
-                    <span>کاخ عالی قاپو</span>
+                    <img src="pic/khuz7.jpg" 
+                         alt="بند میزان شوشتر – بخش مهمی از سازه‌های آبی تاریخی" loading="lazy">
+                    <span>بند میزان</span>
                 </div>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>اطلاعات برگرفته از منابع معتبر از جمله ویکی‌پدیا | 
-            <a href="https://fa.wikipedia.org/wiki/استان_اصفهان" target="_blank" style="color:#40c4ff; font-weight:bold; text-decoration:underline;">
-                استان اصفهان
+        <p>اطلاعات برگرفته از منابع معتبر از جمله ویکی‌پدیا و سازمان میراث فرهنگی | 
+            <a href="https://fa.wikipedia.org/wiki/استان_خوزستان" target="_blank" style="color:#40c4ff; font-weight:bold; text-decoration:underline;">
+                استان خوزستان
             </a>
         </p>
     </footer>

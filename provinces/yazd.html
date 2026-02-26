@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>یزد؛ شهر بادگیرها و میراث جهانی</title>
+    <link rel="preload" as="image" href="https://th.bing.com/th/id/R.b08c061eb51a739e548e2b94c2b23ff1?rik=JfNDQ8vuqiI9pg&pid=ImgRaw&r=0" type="image/jpeg">
     <style>
         :root {
-            --primary-desert: #d4a373; /* رنگ خاک و شن */
-            --accent-blue: #0077b6;   /* رنگ کاشی‌های فیروزه‌ای */
-            --warm-sand: #fefae0;     /* رنگ زمینه روشن */
-            --dark-brown: #582f0e;    /* رنگ متن تیره */
+            --primary-desert: #d4a373;
+            --accent-blue: #49270c;
+            --warm-sand: #fefae0;
+            --dark-brown: #582f0e;
             --gold: #bc6c25;
+            --text-light: #ffffff;
         }
 
         body {
@@ -19,147 +21,233 @@
             margin: 0;
             line-height: 1.8;
             color: var(--dark-brown);
+            font-size: 1.1rem;
         }
 
-        /* --- استایل دکمه بازگشت --- */
         .back-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            position: fixed;
+            top: 16px;
+            right: 16px;
             z-index: 1000;
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 20px;
-            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 18px;
+            background-color: rgba(255, 255, 255, 0.95);
             color: var(--dark-brown);
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 50px;
             font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
             border: 1px solid var(--accent-blue);
         }
 
-        .back-button:hover {
-            background-color: var(--accent-blue);
-            color: white;
-            transform: scale(1.05);
-        }
+        .back-button:hover { background: var(--accent-blue); color: white; transform: scale(1.05); }
 
-        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                        url('https://th.bing.com/th/id/R.b08c061eb51a739e548e2b94c2b23ff1?rik=JfNDQ8vuqiI9pg&pid=ImgRaw&r=0');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 70vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75) 70%), 
+                        url('https://th.bing.com/th/id/R.b08c061eb51a739e548e2b94c2b23ff1?rik=JfNDQ8vuqiI9pg&pid=ImgRaw&r=0') center/cover no-repeat;
+            background-attachment: scroll;
+            height: 80vh;
+            min-height: 500px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
+            color: var(--text-light);
             text-align: center;
             padding: 0 20px;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 15px;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+            font-size: 4.2rem;
+            margin: 0 0 20px;
+            text-shadow: 3px 3px 20px rgba(0,0,0,0.8);
+            font-weight: 900;
         }
 
         .hero p {
-            font-size: 1.6rem;
-            max-width: 800px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            background: rgba(188, 108, 37, 0.4);
-            padding: 10px 25px;
-            border-radius: 50px;
+            font-size: 1.7rem;
+            max-width: 900px;
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.9);
+            background: rgba(188, 108, 37, 0.65);
+            padding: 12px 30px;
+            border-radius: 60px;
+            border: 1px solid #391f0a;
         }
 
-        .container { max-width: 1200px; margin: -50px auto 40px; padding: 0 20px; }
+        .container { max-width: 1200px; margin: -80px auto 60px; padding: 0 20px; }
 
         section {
             background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
+            padding: 45px 30px;
+            border-radius: 16px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h2 {
             color: var(--gold);
-            border-right: 5px solid var(--accent-blue);
-            padding-right: 15px;
-            margin-bottom: 25px;
+            border-right: 6px solid var(--accent-blue);
+            padding-right: 18px;
+            margin-bottom: 30px;
+            font-size: 2.1rem;
         }
 
-        /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
             text-align: center;
         }
 
-        .stat-item { padding: 20px; background: #faedcd; border-radius: 10px; }
-        .stat-item h4 { margin: 0; color: var(--gold); font-size: 1.2rem; }
-        .stat-item p { margin: 5px 0 0; font-weight: bold; }
+        .stat-item {
+            padding: 20px 12px;
+            background: rgba(250, 237, 205, 0.92);
+            border-radius: 12px;
+            border: 1px solid rgba(188,108,37,0.12);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
 
-        /* Content Layout */
+        .stat-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(188,108,37,0.15);
+        }
+
+        .stat-item h4 {
+            margin: 0 0 8px;
+            color: var(--gold);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .stat-item p {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-brown);
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin: 1.5rem 0.8rem 0.5rem 0;
+            padding: 12px 28px;
+            background: var(--gold);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover { background: #a55b1f; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(188,108,37,0.3); }
+
         .flex-content {
             display: flex;
-            gap: 30px;
+            gap: 35px;
             flex-wrap: wrap;
             align-items: center;
         }
 
-        .flex-text { flex: 2; min-width: 300px; }
-        .flex-img { flex: 1; min-width: 300px; }
-        .flex-img img { width: 100%; border-radius: 15px; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); }
+        .flex-text { flex: 2; min-width: 320px; }
+        .flex-img { flex: 1; min-width: 320px; }
+        .flex-img img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease;
+        }
+        .flex-img img:hover { transform: scale(1.04); }
 
-        /* Gallery */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
         }
 
         .gallery-item {
             position: relative;
-            height: 200px;
-            border-radius: 10px;
+            height: 220px;
+            border-radius: 12px;
             overflow: hidden;
+            transition: all 0.4s;
         }
 
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item:hover { transform: scale(1.04); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+
         .gallery-item span {
-            position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.6);
-            color: white; padding: 5px; text-align: center; font-size: 0.8rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(188, 108, 37, 0.85);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
-        footer { background: var(--dark-brown); color: white; text-align: center; padding: 30px; }
+        footer {
+            background: var(--dark-brown);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 6px solid var(--accent-blue);
+        }
 
-        @media (max-width: 768px) {
+        /* موبایل */
+        @media (max-width: 900px) {
+            .hero { height: 70vh; min-height: 450px; }
+            .hero h1 { font-size: 3.2rem; }
+            .hero p  { font-size: 1.4rem; padding: 10px 24px; }
+        }
+
+        @media (max-width: 600px) {
+            .hero { height: 60vh; min-height: 380px; }
             .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.1rem; }
-            .back-button { top: 10px; right: 10px; padding: 8px 15px; font-size: 0.8rem; }
+            .hero p  { font-size: 1.25rem; }
+            .back-button { top: 12px; right: 12px; padding: 8px 14px; font-size: 0.9rem; }
+            section { padding: 35px 20px; }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .stat-item {
+                padding: 16px 10px;
+            }
+            .stat-item h4 { font-size: 0.95rem; }
+            .stat-item p  { font-size: 1.25rem; }
+        }
+
+        @media (max-width: 380px) {
+            .stats-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <a href="../index.html" class="back-button">
-       <span>&#10140;</span> بازگشت به صفحه اصلی
+    <a href="../index.html" class="back-button" aria-label="بازگشت به صفحه اصلی سایت">
+        <span aria-hidden="true">←</span> بازگشت به صفحه اصلی
     </a>
 
     <header class="hero">
         <h1>استان یزد</h1>
-        <p>نخستین شهر خشت خام جهان و قلمرو درخشان تاریخ ایران</p>
+        <p>نخستین شهر خشت خام جهان – حسینیه ایران و شهر بادگیرها</p>
     </header>
 
     <div class="container">
@@ -168,8 +256,8 @@
             <div class="stats-grid">
                 <div class="stat-item"><h4>مرکز استان</h4><p>یزد (شهر دوچرخه‌ها)</p></div>
                 <div class="stat-item"><h4>مساحت</h4><p>۷۶٬۴۶۹ کیلومتر مربع</p></div>
-                <div class="stat-item"><h4>جمعیت</h4><p>بیش از ۱،۱۳۸،۰۰۰ نفر</p></div>
-                <div class="stat-item"><h4>لقب</h4><p>حسینیه ایران، شهر بادگیرها</p></div>
+                <div class="stat-item"><h4>جمعیت (برآورد ۱۴۰۴)</h4><p>≈ ۱٫۳۸۴ میلیون نفر</p></div>
+                <div class="stat-item"><h4>لقب معروف</h4><p>حسینیه ایران، شهر بادگیرها</p></div>
             </div>
         </section>
 
@@ -177,10 +265,12 @@
             <div class="flex-content">
                 <div class="flex-text">
                     <h2>تاریخ و اصالت</h2>
-                    <p>واژه یزد ریشه در «یزش» به معنای ستایش و نیایش دارد. این سرزمین از دیرباز مهد آیین زرتشتی و همزیستی مسالمت‌آمیز ادیان بوده است. بافت تاریخی یزد با کوچه‌های آشتی‌کنان و دیوارهای کاهگلی، یکی از دست‌نخورده‌ترین بافت‌های مسکونی تاریخ ایران است که به دلیل معماری خاص خود، در فهرست میراث جهانی یونسکو به ثبت رسیده است.</p>
+                    <p>واژه یزد ریشه در «یزش» به معنای ستایش و نیایش دارد. این سرزمین مهد آیین زرتشتی و همزیستی مسالمت‌آمیز ادیان بوده است. بافت تاریخی یزد با کوچه‌های آشتی‌کنان و دیوارهای کاهگلی، یکی از دست‌نخورده‌ترین بافت‌های مسکونی تاریخ ایران است که در فهرست میراث جهانی یونسکو ثبت شده است.</p>
                 </div>
                 <div class="flex-img">
-                    <img src="https://tse1.mm.bing.net/th/id/OIP.CvRgE_lDsC25L2yVdUHVVwHaHS?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="آتشکده یزد">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.CvRgE_lDsC25L2yVdUHVVwHaHS?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                         alt="آتشکده زرتشتیان یزد – نماد تاریخی و مذهبی استان" loading="lazy">
+                    <a href="https://www.google.com/maps/place/یزد" target="_blank" class="cta-button">نمایش یزد روی نقشه</a>
                 </div>
             </div>
         </section>
@@ -189,34 +279,63 @@
             <div class="flex-content" style="flex-direction: row-reverse;">
                 <div class="flex-text">
                     <h2>مهندسی کویر</h2>
-                    <p>یزد نماد غلبه انسان بر شرایط سخت اقلیمی است. اختراع «قنات» برای انتقال آب از فرسنگ‌ها دورتر و ساخت «بادگیرها» برای تهویه مطبوع هوا بدون مصرف انرژی، یزد را به قطب معماری پایدار جهان تبدیل کرده است. این استان علی‌رغم آب‌وهوای گرم و خشک، از دیرباز قطب صنعتی و تجاری مهمی در مسیر جاده ابریشم بوده است.</p>
+                    <p>یزد نماد غلبه انسان بر شرایط سخت اقلیمی است. اختراع «قنات» برای انتقال آب و ساخت «بادگیرها» برای تهویه طبیعی هوا بدون انرژی، یزد را به قطب معماری پایدار جهان تبدیل کرده است. این استان علی‌رغم آب‌وهوای گرم و خشک، از دیرباز قطب صنعتی و تجاری مهمی در مسیر جاده ابریشم بوده است.</p>
                 </div>
                 <div class="flex-img">
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.zNPeIWtQs7v0OPhzetNovwHaEs?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="بادگیر باغ دولت آباد">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.zNPeIWtQs7v0OPhzetNovwHaEs?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                         alt="بادگیر بلند باغ دولت‌آباد یزد – بلندترین بادگیر جهان" loading="lazy">
                 </div>
             </div>
         </section>
 
         <section>
             <h2>جاذبه‌ها و سوغات</h2>
-            <p>از شیرینی‌های بی‌نظیر مانند قطاب و باقلوا تا ترمه و زری‌بافی‌های ظریف؛ یزد تجربه‌ای متفاوت از هنر و طعم را به مهمانان خود هدیه می‌دهد.</p>
+            <p>از شیرینی‌های بی‌نظیر مانند قطاب و باقلوا تا ترمه و زری‌بافی‌های ظریف؛ یزد تجربه‌ای متفاوت از هنر، تاریخ و طعم را به مهمانان خود هدیه می‌دهد.</p>
+
+            <div style="margin: 2rem 0;">
+                <a href="https://fa.wikipedia.org/wiki/شهر_تاریخی_یزد" target="_blank" class="cta-button">بیشتر درباره شهر تاریخی یزد</a>
+            </div>
+
             <div class="gallery">
-                <div class="gallery-item"><img src="https://cdn.nutgy.com/wp-content/uploads/2025/03/239-ezgif.com-png-to-webp-converter.webp" alt="مسجد جامع"><span>مناره‌های بلند مسجد جامع</span></div>
-                <div class="gallery-item"><img src="https://blog.okcs.com/wp-content/uploads/2020/11/%D8%B7%D8%B1%D8%B2-%D8%AA%D9%87%DB%8C%D9%87-%D8%A8%D8%A7%D9%82%D9%84%D9%88%D8%A7-%D8%AA%D8%B1%DA%A9%DB%8C-%D8%AE%D9%85%DB%8C%D8%B1-%DB%8C%D9%88%D9%81%DA%A9%D8%A7-%DB%B1.jpg" alt="دخمه"><span>دخمه زرتشتیان (برج خاموشان)</span></div>
-                <div class="gallery-item"><img src="https://tse3.mm.bing.net/th/id/OIP.v7vhOsYQXsWHHigBzl_l7QHaE8?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" alt="خرانق"><span>روستای تاریخی خرانق</span></div>
+                <div class="gallery-item">
+                    <img src="https://cdn.nutgy.com/wp-content/uploads/2025/03/239-ezgif.com-png-to-webp-converter.webp" 
+                         alt="مناره‌های بلند مسجد جامع یزد – نماد معماری اسلامی" loading="lazy">
+                    <span>مناره‌های مسجد جامع</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://blog.okcs.com/wp-content/uploads/2020/11/%D8%B7%D8%B1%D8%B2-%D8%AA%D9%87%DB%8C%D9%87-%D8%A8%D8%A7%D9%82%D9%84%D9%88%D8%A7-%D8%AA%D8%B1%DA%A9%DB%8C-%D8%AE%D9%85%DB%8C%D8%B1-%DB%8C%D9%88%D9%81%DA%A9%D8%A7-%DB%B1.jpg" 
+                         alt="دخمه زرتشتیان (برج خاموشان) یزد – مکان تاریخی آیین زرتشتی" loading="lazy">
+                    <span>دخمه زرتشتیان</span>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.v7vhOsYQXsWHHigBzl_l7QHaE8?cb=defcache2&defcache=1&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                         alt="روستای تاریخی خرانق یزد – بافت قدیمی و بادگیرها" loading="lazy">
+                    <span>روستای تاریخی خرانق</span>
+                </div>
             </div>
         </section>
     </div>
 
     <footer>
-        <p>استخراج شده از دانشنامه آزاد ویکی‌پدیا | 
-            <a href="https://fa.wikipedia.org/wiki/%D8%A7%D8%B3%D8%AA%D8%A7%D9%86_%DB%8C%D8%B2%D8%AF" 
-               target="_blank" 
-               style="color: var(--accent-blue); text-decoration: none; font-weight: bold; border-bottom: 1px dashed var(--accent-blue);">
-               یزد
+        <p>اطلاعات برگرفته از منابع معتبر از جمله ویکی‌پدیا و مرکز آمار | 
+            <a href="https://fa.wikipedia.org/wiki/استان_یزد" target="_blank" style="color:#40c4ff; font-weight:bold; text-decoration:underline;">
+                استان یزد
             </a>
         </p>
     </footer>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => observer.observe(section));
+    </script>
 
 </body>
 </html>

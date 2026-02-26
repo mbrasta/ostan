@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تهران؛ تپش قلب ایران</title>
-    <link rel="preload" as="image" href="https://media.tehrantimes.com/d/t/2020/12/09/4/3624241.jpg" type="image/jpeg">
+    <title>آذربایجان غربی؛ دریاچه ارومیه و میراث اورارتو</title>
+    <link rel="preload" as="image" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Lake_Urmia_from_space.jpg/1280px-Lake_Urmia_from_space.jpg" type="image/jpeg">
     <style>
         :root {
-            --tehran-blue: #0d1b2a;
-            --modern-gray: #e0e1dd;
-            --accent-gold: rgba(13, 27, 42, 0.6);
-            --city-silver: #415a77;
-            --soft-white: #f8f9fa;
+            --primary-blue: #1e88e5;
+            --accent-gold: #1873c3;
+            --soft-sand: #fffde7;
+            --dark-brown: #3e2723;
             --text-light: #ffffff;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--soft-white);
+            background-color: var(--soft-sand);
             margin: 0;
             line-height: 1.8;
-            color: var(--tehran-blue);
+            color: var(--dark-);
             font-size: 1.1rem;
         }
 
@@ -34,21 +33,21 @@
             gap: 8px;
             padding: 10px 18px;
             background-color: rgba(255, 255, 255, 0.95);
-            color: var(--tehran-blue);
+            color: var(--primary-lake);
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
             font-size: 0.95rem;
             box-shadow: 0 4px 15px rgba(0,0,0,0.12);
             transition: all 0.3s ease;
-            border: 1px solid var(--accent-gold);
+            border: 1px solid var(--gold-heritage);
         }
 
-        .back-button:hover { background: var(--tehran-blue); color: white; transform: scale(1.05); }
+        .back-button:hover { background: var(--primary-blue); color: white; transform: scale(1.05); }
 
         .hero {
-            background: linear-gradient(to bottom, rgba(13,27,42,0.65), rgba(13,27,42,0.8) 70%), 
-                        url('https://media.tehrantimes.com/d/t/2020/12/09/4/3624241.jpg') center/cover no-repeat;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.75) 70%), 
+                        url('pic/azar1.jpg') center/cover no-repeat;
             background-attachment: scroll;
             height: 80vh;
             min-height: 500px;
@@ -72,11 +71,10 @@
             font-size: 1.7rem;
             max-width: 900px;
             text-shadow: 2px 2px 12px rgba(0,0,0,0.9);
-            background: rgba(184, 146, 106, 0.35);
-            backdrop-filter: blur(5px);
+            background: rgba(30, 136, 229, 0.65);
             padding: 12px 30px;
             border-radius: 60px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,179,0,0.4);
         }
 
         .container { max-width: 1200px; margin: -80px auto 60px; padding: 0 20px; }
@@ -98,7 +96,7 @@
         }
 
         h2 {
-            color: var(--tehran-blue);
+            color: var(--primary-blue);
             border-right: 6px solid var(--accent-gold);
             padding-right: 18px;
             margin-bottom: 30px;
@@ -113,38 +111,38 @@
         }
 
         .stat-item {
-            padding: 25px 15px;
-            background: var(--modern-gray);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 20px 12px;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 12px;
+            border: 1px solid rgba(30,136,229,0.12);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .stat-item:hover {
-            background: #d0d2ca;
             transform: translateY(-6px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(30,136,229,0.15);
         }
 
         .stat-item h4 {
             margin: 0 0 8px;
-            color: var(--city-silver);
+            color: var(--primary-blue);
             font-size: 1.05rem;
             font-weight: 600;
         }
 
         .stat-item p {
             margin: 0;
-            font-size: 1.35rem;
-            font-weight: 900;
-            color: var(--tehran-blue);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-brown);
         }
 
         .cta-button {
             display: inline-block;
             margin: 1.5rem 0.8rem 0.5rem 0;
             padding: 12px 28px;
-            background: var(--tehran-blue);
+            background: var(--primary-blue);
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -152,11 +150,11 @@
             transition: all 0.3s;
         }
 
-        .cta-button:hover { background: #1b263b; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(13,27,42,0.3); }
+        .cta-button:hover { background: #1565c0; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(30,136,229,0.3); }
 
         .flex-content {
             display: flex;
-            gap: 40px;
+            gap: 35px;
             flex-wrap: wrap;
             align-items: center;
         }
@@ -165,11 +163,11 @@
         .flex-img { flex: 1; min-width: 320px; }
         .flex-img img {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
             transition: transform 0.4s ease;
         }
-        .flex-img img:hover { transform: scale(1.03); }
+        .flex-img img:hover { transform: scale(1.04); }
 
         .gallery {
             display: grid;
@@ -181,9 +179,8 @@
         .gallery-item {
             position: relative;
             height: 220px;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.4s;
         }
 
@@ -195,7 +192,7 @@
             position: absolute;
             bottom: 0;
             width: 100%;
-            background: rgba(13, 27, 42, 0.85);
+            background: rgba(30, 136, 229, 0.85);
             color: white;
             padding: 10px;
             text-align: center;
@@ -204,8 +201,8 @@
         }
 
         footer {
-            background: var(--tehran-blue);
-            color: var(--modern-gray);
+            background: var(--primary-blue);
+            color: white;
             text-align: center;
             padding: 40px 20px;
             border-top: 6px solid var(--accent-gold);
@@ -230,7 +227,7 @@
                 gap: 12px;
             }
             .stat-item {
-                padding: 20px 12px;
+                padding: 16px 10px;
             }
             .stat-item h4 { font-size: 0.95rem; }
             .stat-item p  { font-size: 1.25rem; }
@@ -243,37 +240,36 @@
 </head>
 <body>
 
-    <a href="../index.html" class="back-button" aria-label="بازگشت به منو">
-        <span aria-hidden="true">←</span> بازگشت به منو
+    <a href="../index.html" class="back-button" aria-label="بازگشت به صفحه اصلی سایت">
+        <span aria-hidden="true">←</span> بازگشت به صفحه اصلی
     </a>
 
     <header class="hero">
-        <h1>استان تهران</h1>
-        <p>آمیزه‌ای از شکوه تاریخ و شتاب مدرنیته در دامنه‌ی البرز – تپش قلب ایران</p>
+        <h1>استان آذربایجان غربی</h1>
+        <p>دریاچه ارومیه، قلعه‌های اورارتویی و میراث چندفرهنگی شمال‌غرب ایران</p>
     </header>
 
     <div class="container">
         <section>
-            <h2>شناسنامه استان</h2>
+            <h2>در یک نگاه</h2>
             <div class="stats-grid">
-                <div class="stat-item"><h4>مرکز استان</h4><p>کلان‌شهر تهران</p></div>
-                <div class="stat-item"><h4>مساحت</h4><p>۱۲٬۹۸۱ کیلومتر مربع</p></div>
-                <div class="stat-item"><h4>جمعیت</h4><p>≈ ۱۴٫۵۵۷ میلیون نفر</p></div>
-                <div class="stat-item"><h4>لقب معروف</h4><p>شهر ۷۲ ملت – تپش قلب ایران</p></div>
+                <div class="stat-item"><h4>مرکز استان</h4><p>ارومیه</p></div>
+                <div class="stat-item"><h4>مساحت</h4><p>۳۷٬۴۳۷ کیلومتر مربع</p></div>
+                <div class="stat-item"><h4>جمعیت</h4><p>≈ ۳٫۴–۳٫۵ میلیون نفر</p></div>
+                <div class="stat-item"><h4>لقب</h4><p>سرزمین اورارتو</p></div>
             </div>
         </section>
 
         <section>
             <div class="flex-content">
                 <div class="flex-text">
-                    <h2>پیشینه و اهمیت</h2>
-                    <p>تهران از دوران قاجار تاکنون، قلب سیاسی، اداری و اقتصادی ایران بوده است. این استان با تمرکز مراکز علمی، صنعتی، فرهنگی و مالی، مهم‌ترین قطب کشور محسوب می‌شود. از محله‌های قدیمی با کوچه‌پس‌کوچه‌های خاطره‌انگیز تا آسمان‌خراش‌ها و بزرگراه‌های مدرن، تهران نماد گذار ایران از سنت به مدرنیته است.</p>
+                    <h2>تاریخ و تمدن اورارتویی</h2>
+                    <p>آذربایجان غربی مهد تمدن اورارتو (حدود ۸۰۰–۶۰۰ ق.م) است. قلعه بسطام، بزرگ‌ترین دژ اورارتویی ایران، و آثار باستانی دیگر نشان‌دهنده قدمت این منطقه است. این استان با هم‌مرزی با ترکیه، عراق و آذربایجان، همیشه محل تلاقی فرهنگ‌ها و تمدن‌ها بوده و امروزه نیز تنوع قومی (آذری، کرد، آشوری، ارمنی) را در خود جای داده است.</p>
                 </div>
                 <div class="flex-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Tehran_fa.svg/960px-Tehran_fa.svg.png" 
-                        alt="نقشه استان تهران – نشان‌دهنده موقعیت مرکزی و اهمیت جغرافیایی" loading="lazy">
-                    
-                <a href="https://www.google.com/maps/place/تهران" target="_blank" class="cta-button">نمایش تهران روی نقشه</a>
+                    <img src="pic/azar2.png" 
+                         alt="دریاچه ارومیه از فضا – بزرگ‌ترین دریاچه داخلی ایران و میراث طبیعی جهانی" loading="lazy">
+                    <a href="https://www.google.com/maps/place/ارومیه" target="_blank" class="cta-button">نمایش ارومیه روی نقشه</a>
                 </div>
             </div>
         </section>
@@ -281,39 +277,39 @@
         <section>
             <div class="flex-content" style="flex-direction: row-reverse;">
                 <div class="flex-text">
-                    <h2>جغرافیا؛ از دشت تا قله</h2>
-                    <p>تهران در دامنه جنوبی البرز قرار دارد و تنوع اقلیمی چشمگیری دارد: شمال استان با شمیرانات و توچال کوهستانی و خنک است، در حالی که جنوب به دشت‌های نیمه‌بیابانی می‌رسد. قله دماوند، بلندترین نقطه ایران، نماد باشکوه این استان است و ریه تنفسی کلان‌شهر شلوغ به شمار می‌رود.</p>
+                    <h2>طبیعت و دریاچه ارومیه</h2>
+                    <p>دریاچه ارومیه، بزرگ‌ترین دریاچه آب شور ایران و یکی از جاذبه‌های طبیعی منحصربه‌فرد جهان، قلب تپنده استان است. استان با تنوع اقلیمی (کوهستانی شمال و دشت‌های جنوبی)، غار سهولان، چشمه‌های آب گرم و روستاهای تاریخی، مقصدی عالی برای طبیعت‌گردی و گردشگری است.</p>
                 </div>
                 <div class="flex-img">
-                    <img src="https://sepanja.com/blog/wp-content/uploads/2022/07/%D8%B4%D8%A7%D8%AE%D8%B5-6.jpg" 
-                         alt="قله دماوند در استان تهران – نماد طبیعی و جغرافیایی برجسته" loading="lazy">
+                    <img src="pic/azar3.jpg" 
+                         alt="دژ بسطام اورارتویی در آذربایجان غربی – بزرگ‌ترین قلعه اورارتویی ایران" loading="lazy">
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>نمادهای شهری و گردشگری</h2>
-            <p>از برج آزادی به عنوان دروازه تمدن تا برج میلاد (ششمین برج مخابراتی بلند جهان) و پل طبیعت (شاهکار معماری معاصر)، تهران ترکیبی بی‌نظیر از تاریخ، هنر و نوآوری است.</p>
+            <h2>جاذبه‌های تاریخی و فرهنگی</h2>
+            <p>از قره‌کلیسا (قدیمی‌ترین کلیسای جهان)، تخت سلیمان (میراث جهانی یونسکو)، غار سهولان تا روستاهای تاریخی و صنایع دستی محلی؛ آذربایجان غربی ترکیبی از تاریخ، مذهب و طبیعت است.</p>
 
             <div style="margin: 2rem 0;">
-                <a href="https://fa.wikipedia.org/wiki/برج_آزادی" target="_blank" class="cta-button">بیشتر درباره برج آزادی</a>
+                <a href="https://fa.wikipedia.org/wiki/دریاچه_ارومیه" target="_blank" class="cta-button">بیشتر درباره دریاچه ارومیه</a>
             </div>
 
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="https://tse4.mm.bing.net/th/id/OIP.Z0hv7Vw6c3s3OkBR2DILsAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" 
-                         alt="برج آزادی تهران – نماد دروازه تمدن و استقلال ایران" loading="lazy">
-                    <span>برج آزادی</span>
+                    <img src="pic/azar5.jpg" 
+                         alt="قره‌کلیسا در چالدران – قدیمی‌ترین کلیسای جهان و میراث جهانی" loading="lazy">
+                    <span>قره‌کلیسا</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://www.jowhareh.com/images/Jowhareh/galleries/poster_6be2459b-4ca7-45c9-b4b6-94687fe388c0.jpeg" 
-                         alt="برج میلاد تهران – ششمین برج بلند مخابراتی جهان" loading="lazy">
-                    <span>برج میلاد</span>
+                    <img src="pic/azar6.webp" 
+                         alt="تخت سلیمان تکاب – مجموعه تاریخی و آتشکده ساسانی، میراث جهانی یونسکو" loading="lazy">
+                    <span>تخت سلیمان</span>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://th.bing.com/th/id/R.1b56f90004efe0d104d322a061649a8f?rik=%2f%2fxEgLFq%2fZa3eA&pid=ImgRaw&r=0" 
-                         alt="پل طبیعت تهران – شاهکار معماری مدرن و نماد گردشگری شهری" loading="lazy">
-                    <span>پل طبیعت</span>
+                    <img src="pic/azar7.jpg" 
+                         alt="غار سهولان مهاباد – غار آبی زیبا و یکی از جاذبه‌های طبیعی استان" loading="lazy">
+                    <span>غار سهولان</span>
                 </div>
             </div>
         </section>
@@ -321,8 +317,8 @@
 
     <footer>
         <p>اطلاعات برگرفته از منابع معتبر از جمله ویکی‌پدیا و مرکز آمار | 
-            <a href="https://fa.wikipedia.org/wiki/استان_تهران" target="_blank" style="color:#c6a664; font-weight:bold; text-decoration:underline;">
-                استان تهران
+            <a href="https://fa.wikipedia.org/wiki/استان_آذربایجان_غربی" target="_blank" style="color:#40c4ff; font-weight:bold; text-decoration:underline;">
+                استان آذربایجان غربی
             </a>
         </p>
     </footer>
